@@ -6,11 +6,6 @@ class NumArray {
     }
 
     public sumRange(left: number, right: number): number {
-        const sums = this.prefixSum()
-        return sums[right + 1] - sums[left]
-    }
-
-    private prefixSum(): number[] {
         const sums: number[] = [0]
         let sum = 0
 
@@ -19,6 +14,6 @@ class NumArray {
             sums.push(sum)
         }
 
-        return sums
+        return sums[right + 1] - sums[left]
     }
 }
